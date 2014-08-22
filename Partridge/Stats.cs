@@ -136,7 +136,7 @@ namespace Partridge
             jsonWriter.WriteStartObject();
             foreach (var metric in stats.Metrics)
             {
-                jsonWriter.WritePropertyName(metric.Key.ToLower());
+                jsonWriter.WritePropertyName(metric.Key);
                 metric.Value.WriteJson(jsonWriter);
             }
             jsonWriter.WriteEndObject();
@@ -144,7 +144,7 @@ namespace Partridge
             jsonWriter.WriteStartObject();
             foreach (var counter in stats.Counters)
             {
-                jsonWriter.WritePropertyName(counter.Key.ToLower());
+                jsonWriter.WritePropertyName(counter.Key);
                 jsonWriter.WriteValue(counter.Value.Value);
             }
             jsonWriter.WriteEndObject();
@@ -152,7 +152,7 @@ namespace Partridge
             jsonWriter.WriteStartObject();
             foreach (var gauge in stats.Gauges)
             {
-                jsonWriter.WritePropertyName(gauge.Key.ToLower());
+                jsonWriter.WritePropertyName(gauge.Key);
                 jsonWriter.WriteValue(gauge.Value.Value);
             }
             jsonWriter.WriteEndObject();

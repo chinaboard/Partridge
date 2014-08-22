@@ -135,7 +135,7 @@ namespace Partridge
             watch.Start();
             var answer = func();
             watch.Stop();
-            name.Each(n => RecordMetric(n.ToLower(), watch));
+            name.Each(n => RecordMetric(n, watch));
             return answer;
         }
 

@@ -192,7 +192,7 @@ namespace Partridge.Service
             key = Regex.Replace(key, @"\s+", "_");
             key = key.Replace('/', '-');
             key = Regex.Replace(key, @"[^a-zA-Z_\-0-9\.]", "");
-            return key.Length > 0 ? key.ToLower() : "1";
+            return key.Length > 0 ? key : "1";
         }
 
         public void Dispose()

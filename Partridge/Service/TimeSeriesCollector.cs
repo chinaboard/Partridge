@@ -69,7 +69,7 @@ namespace Partridge.Service
                     foreach (var kv in listener.GetMetrics())
                     {
                         var data = percentiles.Select(p => Convert.ToInt64(kv.Value.Histogram.GetPercentile(p))).ToList();
-                        hourlyTimings.AddOrUpdate("timing:" + kv.Key.ToLower(), k => TimeSeries<List<long>>.Hourly(() => new List<long>(emptyTimings), data), (k, ts) => ts.Add(data));
+                        hourlyTimings.AddOrUpdate("timing:" + kv.Key, k => TimeSeries<List<long>>.Hourly(() => new List<long>(emptyTimings), data), (k, ts) => ts.Add(data));
                     }
 
                     last = SystemClock.UtcNow().MillisFromEpoch();
