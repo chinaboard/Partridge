@@ -68,12 +68,12 @@ namespace Partridge
             GetDefault().DeleteGauge(name);
         }
 
-        public static void AddMetric(string name, int n)
+        public static void AddMetric(string name, long n)
         {
             GetDefault().RecordMetric(name, n);
         }
 
-        public static void Time(string name, int millis)
+        public static void Time(string name, long millis)
         {
             GetDefault().RecordMetric(name, millis);
         }
@@ -98,7 +98,7 @@ namespace Partridge
             return GetDefault().DeleteTime(tag);
         }
 
-        public static long Incr(string name, int count)
+        public static long Incr(string name, long count)
         {
             return GetDefault().Increment(name, count);
         }

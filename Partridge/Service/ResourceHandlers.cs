@@ -159,7 +159,7 @@ namespace Partridge.Service
             binary = null;
             try
             {
-                binary = Assembly.GetExecutingAssembly().GetManifestResourceStream("OstrichNet.Service.Static." + resource);
+                binary = Assembly.GetExecutingAssembly().GetManifestResourceStream("Partridge.Service.Static." + resource);
             }
             catch (Exception)
             {

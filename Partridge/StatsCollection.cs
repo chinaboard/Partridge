@@ -81,7 +81,7 @@ namespace Partridge
             gauges.TryRemove(name, out value);
         }
 
-        public void RecordMetric(string name, int n)
+        public void RecordMetric(string name, long n)
         {
             var metric = GetMetric(name);
             metrics.AddOrUpdate(name, k => AddFanout(metric, n), (key, stat) =>
@@ -146,12 +146,12 @@ namespace Partridge
             return value;
         }
 
-        public long Increment(string name, int count)
+        public long Increment(string name, long count)
         {
             return Increment(new[] { name }, count);
         }
 
-        public long Increment(string[] names, int count)
+        public long Increment(string[] names, long count)
         {
             long answer = 0;
             foreach (var name in names)

@@ -16,10 +16,10 @@ namespace Partridge.Demo
             Random rand = new Random();
             while (true)
             {
-                Stats.Time("Demo", rand.Next(400));
-                Thread.Sleep(rand.Next(400));
+                Stats.Time("demo", rand.Next(40, rand.Next(50, 6000)));
+                Thread.Sleep(rand.Next(40));
                 Console.Clear();
-                var metric = Stats.GetDefault().GetMetric("Demo");
+                var metric = Stats.GetDefault().GetMetric("demo");
                 Console.WriteLine(metric.Count);
                 Console.WriteLine(metric.Min);
                 Console.WriteLine(metric.Mean);
