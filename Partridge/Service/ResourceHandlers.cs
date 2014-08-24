@@ -193,7 +193,7 @@ namespace Partridge.Service
                     s.Serialize(jsonWriter, new Dictionary<string, IEnumerable<string>> { { "keys", collector.GetKeys() } });
                 }
 
-                response(Ok, GetContentType(ApplicationJson), Encode(sb.ToString())); response(Ok, GetContentType(ApplicationJson), Encode(sb.ToString()));
+                response(Ok, GetContentType(ApplicationJson), Encode(sb.ToString())); 
             } 
             else
             {
